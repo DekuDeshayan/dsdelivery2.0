@@ -8,5 +8,7 @@ public interface OrderService {
 	
 	List<OrderDTO> findAll();
 	
+	OrderDTO save(OrderDTO dto);
+	
 
 }
