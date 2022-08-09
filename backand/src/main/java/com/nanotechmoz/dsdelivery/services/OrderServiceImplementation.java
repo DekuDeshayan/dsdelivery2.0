@@ -37,6 +37,7 @@ public class OrderServiceImplementation implements OrderService {
 	    * first, we need to transform  order list into stream of orderDTO
 		* after that, then we finally need to transform  the stream into list of orderDTO
 		*/
+		//Means loop the productList and transform each of them to a dto of products
 		return list.stream().map(x -> new OrderDTO(x)).collect(Collectors.toList());
 	
 	}
@@ -56,6 +57,20 @@ public class OrderServiceImplementation implements OrderService {
 		}
 		 
 		return new OrderDTO(repository.save(order));
+	}
+
+	
+	@Override
+	@Transactional
+	public OrderDTO setDelivered(Long orderId) {
+		
+		Order order = repository.findById(orderId).get();
+		
+		order.setStatus(OrderStatus.DELIVERED);
+		
+		
+		return  new OrderDTO(repository.save(order));  
+		
 	}
 
 	

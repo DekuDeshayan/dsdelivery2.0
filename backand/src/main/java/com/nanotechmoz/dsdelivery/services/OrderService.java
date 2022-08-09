@@ -10,5 +10,8 @@ public interface OrderService {
 	
 	OrderDTO save(OrderDTO dto);
 	
+	OrderDTO setDelivered(Long orderId);
+	
+	
 
 }
