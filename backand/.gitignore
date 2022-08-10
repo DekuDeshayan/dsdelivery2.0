@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+#PostgreSql database seeding script
+create.sql
