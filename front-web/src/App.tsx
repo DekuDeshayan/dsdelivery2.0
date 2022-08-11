@@ -1,15 +1,10 @@
 import React from 'react';
 import './App.css';
-import Navbar from './Navbar';
-import Home from './Home';
-
+import AppRoutes from './Routes';
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Home />
-    </>
+    <AppRoutes/>
   );
 }
 
