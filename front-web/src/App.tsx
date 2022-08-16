@@ -1,11 +1,10 @@
-import React from 'react';
-import './App.css';
-import AppRoutes from './Routes';
-
 function App() {
+
   return (
-    <AppRoutes/>
-  );
+    <div>
+      <h1>Hello, World!</h1>
+    </div>
+  )
 }
 
-export default App;
+export default App
