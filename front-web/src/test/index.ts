@@ -1,0 +1,1 @@
+export const handleChange = (value:any) => value.target.value;

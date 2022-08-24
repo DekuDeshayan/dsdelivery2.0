@@ -1,5 +1,3 @@
-import React from "react";
-
 function StepsHeader(){
     return (
          <header className="orders-steps-container">

@@ -1,4 +1,3 @@
-import React from "react";
 import { Product } from "../../model/Product";
 import ProductCard from "./ProductCard";
 
