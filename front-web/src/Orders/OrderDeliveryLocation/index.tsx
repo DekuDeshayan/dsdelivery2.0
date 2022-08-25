@@ -45,6 +45,25 @@ function OrderLocation({ onChangeLocation }: Props) {
     return places;
 };
 
+//syncronous approuch
+// const loadOptions = (inputValue: string, callback: (places: Place[]) => void) => {
+    
+//   // use .then(...) callbacks to turn this synchronous
+//   fetchLocalMapbox(inputValue)
+//   .then(response => {
+//       const places = response.data.features.map((item: any) => ({
+//           label: item.place_name,
+//           value: item.place_name,
+//           position: {
+//               lat: item.center[1],
+//               lng: item.center[0]
+//           }
+//       }));
+
+//       callback(places);
+//   });
+
+// };
 
 
 
