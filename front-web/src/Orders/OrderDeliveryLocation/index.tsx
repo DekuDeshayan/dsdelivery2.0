@@ -4,6 +4,7 @@ import AsyncSelect from 'react-select/async';
 import { OrderLocationData } from "../../model/OrderLocation";
 import { Place } from "../../model/Place";
 import { fetchLocalMapBox } from "../../services/MapApiService";
+import { MAPBOX_ACCESS_TOKEN } from "../../common/constants";
 
 
 
@@ -98,7 +99,7 @@ function OrderLocation({ onChangeLocation }: Props) {
           <TileLayer
             //attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             attribution='Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>'
-            url="https://api.mapbox.com/styles/v1/mh4life/cl6y69yhw008d15o344osi2lu/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWg0bGlmZSIsImEiOiJjbDZ5N2k0NWUwN3VqM2ttcHB6emZidzhzIn0.CRrAKXpNjEwQPtOi-brBIg"
+            url={`https://api.mapbox.com/styles/v1/mh4life/cl6y69yhw008d15o344osi2lu/tiles/256/{z}/{x}/{y}@2x?access_token=${MAPBOX_ACCESS_TOKEN}`}
            //url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <Marker position={address.position}>
