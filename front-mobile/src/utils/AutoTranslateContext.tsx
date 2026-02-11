@@ -1,8 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// Replace with your actual Anthropic API key
-const ANTHROPIC_API_KEY =  'your_anthropic_key_here';
 
 type Language = 'pt' | 'en' | 'ja' | 'es' | 'fr' | 'de' | 'zh' | 'ko' | 'ru' | 'ar';
 
@@ -44,7 +42,7 @@ const translateText = async (text: string, targetLang: string): Promise<string> 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': ANTHROPIC_API_KEY,
+        'x-api-key': 'examplekey',
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
