@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
-import Header from '../Header';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
+import { useAutoTranslate } from '../utils/AutoTranslateContext';
 
 type RootStackParamList = {
   Home: undefined;
@@ -9,32 +9,34 @@ type RootStackParamList = {
 };
 
 export default function Home() {
-
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-
-    const handleOnPress = () => {
-        navigation.navigate('Orders');
-    }
+  const { t } = useAutoTranslate();
+   
+  const handleOnPress = () => {
+    navigation.navigate('Orders');
+  }
 
   return (
     <>
-    {/* <Header/> */}
-    <View style={styles.container}>
+      <View style={styles.container}>
         <Image source={require('../assets/deliveryman.png')} />
-        <Text style={styles.title}>Acompanhe os pedidos e {'\n'} entregue no prazo!</Text>
-        <Text style={styles.subTitle}>Receba todos os pedidos do seu {'\n'} restaurante na palma da sua mão</Text>
-    </View>
-    <View style={styles.footer}>
+        <Text style={styles.title}>
+          {t('Acompanhe os pedidos e')}{'\n'}{t('entregue no prazo!')}
+        </Text>
+        <Text style={styles.subTitle}>
+          {t('Receba todos os pedidos do seu')}{'\n'}{t('restaurante na palma da sua mão')}
+        </Text>
+      </View>
+      <View style={styles.footer}>
         <RectButton style={styles.button} onPress={handleOnPress}>
-            <Text style={styles.buttonText}>VER PEDIDOS</Text>
+          <Text style={styles.buttonText}>{t('VER PEDIDOS')}</Text>
         </RectButton>
-    </View>
+      </View>
     </>
   );
 }
 
-const styles = StyleSheet.create(
-    {
+const styles = StyleSheet.create({
   container: {
     marginTop: '5%',
     alignItems: 'center'
@@ -73,5 +75,4 @@ const styles = StyleSheet.create(
     color: '#FFF',
     letterSpacing: -0.24
   }
-}
-);
+});

@@ -1,1 +1,1 @@
-export const BASE_API_URL = 'http://localhost:8080/api';
+export const BASE_API_URL = process.env.BASE_API_URL || 'https://api.example.com';

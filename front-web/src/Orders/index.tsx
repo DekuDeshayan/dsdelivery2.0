@@ -50,7 +50,7 @@ function Orders() {
     }
   
     saveOrder(payload).then((response) => {
-      toast.error(`Pedido enviado com sucesso! № ${response.data.id}`);
+      toast.success(`Pedido enviado com sucesso! № ${response.data.id}`);
       setSelectedProducts([]);
     }).catch(() => {
         toast.warning('Erro ao enviar pedido');

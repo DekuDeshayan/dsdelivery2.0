@@ -7,7 +7,7 @@ import { ReactComponent as Youtube } from "./Youtube.svg";
 function Footer(){
     return (
         <footer className="main-footer">
-            App desenvolvido durante a 2ª ed. do evento Semana DevSuperior
+            Ds delivery - Todos os direitos reservados, 2024
             <div className="footer-icons">
                 <a href="#">
                     <Instagram/>
